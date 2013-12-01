@@ -18,6 +18,7 @@ This setup was used with Raspbian, the image provided with the [NOOBS](http://ww
 Now you'll probably want to route certain traffic or all traffic via your RPi, there are two levels you can do this at and different ways to do it. Now as a test we should try to access the AirVPN Speedtest page available at http://10.4.0.1/ but to do this we either need to update the routing table on you computer or we can do it a router level so every device on the network can access it. Lets do it on the computer to start. First get the local network IP of your RPi in this example we'll use 192.168.1.7
 
 If you're using Windows you do the following:
+
 1. Open a Command Prompt as Administrator.
 2. Type **route add 10.0.0.0 mask 255.0.0.0 192.168.1.7**
 3. TODO
