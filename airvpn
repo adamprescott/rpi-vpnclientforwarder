@@ -5,7 +5,7 @@ DAEMON=/usr/sbin/openvpn
 case "$1" in
   start)
     echo "Starting AirVPN"
-    start-stop-daemon --start --oknodo --quiet --exec /usr/sbin/openvpn -- --writepid $PIDFILE --status /var/run/airvpn.client.status 10 --cd /var/opt/AirVPN --config /var/opt/AirVPN/AirVPN.ovpn --daemon airvpnadam
+    start-stop-daemon --start --oknodo --quiet --exec /usr/sbin/openvpn -- --writepid $PIDFILE --status /var/run/airvpn.client.status 10 --cd /var/opt/AirVPN --config /var/opt/AirVPN/AirVPN.ovpn --daemon airvpn
     ;;
   stop)
     echo "Stopping AirVPN"
