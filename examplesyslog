@@ -1,0 +1,38 @@
+Dec  1 15:06:14 PIVPN airvpn[3062]: OpenVPN 2.2.1 arm-linux-gnueabihf [SSL] [LZO2] [EPOLL] [PKCS11] [eurephia] [MH] [PF_INET6] [IPv6 payload 20110424-2 (2.2RC2)] built on Oct 12 2013
+Dec  1 15:06:14 PIVPN airvpn[3062]: NOTE: OpenVPN 2.1 requires '--script-security 2' or higher to call user-defined scripts or executables
+Dec  1 15:06:14 PIVPN airvpn[3062]: WARNING: file 'user.key' is group or others accessible
+Dec  1 15:06:14 PIVPN airvpn[3062]: LZO compression initialized
+Dec  1 15:06:14 PIVPN airvpn[3062]: Control Channel MTU parms [ L:1558 D:138 EF:38 EB:0 ET:0 EL:0 ]
+Dec  1 15:06:14 PIVPN airvpn[3062]: Socket Buffers: R=[163840->131072] S=[163840->131072]
+Dec  1 15:06:14 PIVPN airvpn[3062]: Data Channel MTU parms [ L:1558 D:1450 EF:58 EB:135 ET:0 EL:0 AF:3/1 ]
+Dec  1 15:06:14 PIVPN airvpn[3062]: Local Options hash (VER=V4): '22188c5b'
+Dec  1 15:06:14 PIVPN airvpn[3062]: Expected Remote Options hash (VER=V4): 'a8f55717'
+Dec  1 15:06:14 PIVPN airvpn[3063]: UDPv4 link local: [undef]
+Dec  1 15:06:14 PIVPN airvpn[3063]: UDPv4 link remote: [AF_INET]78.129.153.40:443
+Dec  1 15:06:14 PIVPN airvpn[3063]: TLS: Initial packet from [AF_INET]78.129.153.40:443, sid=62eb96e4 15bc9650
+Dec  1 15:06:15 PIVPN airvpn[3063]: VERIFY OK: depth=1, /C=IT/ST=IT/L=Perugia/O=airvpn.org/CN=airvpn.org_CA/emailAddress=info@airvpn.org
+Dec  1 15:06:15 PIVPN airvpn[3063]: VERIFY OK: nsCertType=SERVER
+Dec  1 15:06:15 PIVPN airvpn[3063]: VERIFY OK: depth=0, /C=IT/ST=IT/L=Perugia/O=airvpn.org/CN=server/emailAddress=info@airvpn.org
+Dec  1 15:06:24 PIVPN airvpn[3063]: Data Channel Encrypt: Cipher 'AES-256-CBC' initialized with 256 bit key
+Dec  1 15:06:24 PIVPN airvpn[3063]: Data Channel Encrypt: Using 160 bit message hash 'SHA1' for HMAC authentication
+Dec  1 15:06:24 PIVPN airvpn[3063]: Data Channel Decrypt: Cipher 'AES-256-CBC' initialized with 256 bit key
+Dec  1 15:06:24 PIVPN airvpn[3063]: Data Channel Decrypt: Using 160 bit message hash 'SHA1' for HMAC authentication
+Dec  1 15:06:24 PIVPN airvpn[3063]: Control Channel: TLSv1, cipher TLSv1/SSLv3 DHE-RSA-AES256-SHA, 2048 bit RSA
+Dec  1 15:06:24 PIVPN airvpn[3063]: [server] Peer Connection Initiated with [AF_INET]78.129.153.40:443
+Dec  1 15:06:26 PIVPN airvpn[3063]: SENT CONTROL [server]: 'PUSH_REQUEST' (status=1)
+Dec  1 15:06:26 PIVPN airvpn[3063]: PUSH: Received control message: 'PUSH_REPLY,redirect-gateway def1,dhcp-option DNS 10.4.0.1,comp-lzo no,route 10.4.0.1,topology net30,ping 10,ping-restart 60,ifconfig 10.4.34.154 10.4.34.153'
+Dec  1 15:06:26 PIVPN airvpn[3063]: OPTIONS IMPORT: timers and/or timeouts modified
+Dec  1 15:06:26 PIVPN airvpn[3063]: OPTIONS IMPORT: LZO parms modified
+Dec  1 15:06:26 PIVPN airvpn[3063]: OPTIONS IMPORT: --ifconfig/up options modified
+Dec  1 15:06:26 PIVPN airvpn[3063]: OPTIONS IMPORT: route options modified
+Dec  1 15:06:26 PIVPN airvpn[3063]: OPTIONS IMPORT: --ip-win32 and/or --dhcp-option options modified
+Dec  1 15:06:26 PIVPN airvpn[3063]: ROUTE default_gateway=192.168.1.1
+Dec  1 15:06:26 PIVPN airvpn[3063]: TUN/TAP device tun0 opened
+Dec  1 15:06:26 PIVPN airvpn[3063]: TUN/TAP TX queue length set to 100
+Dec  1 15:06:26 PIVPN airvpn[3063]: do_ifconfig, tt->ipv6=0, tt->did_ifconfig_ipv6_setup=0
+Dec  1 15:06:26 PIVPN airvpn[3063]: /sbin/ifconfig tun0 10.4.34.154 pointopoint 10.4.34.153 mtu 1500
+Dec  1 15:06:26 PIVPN airvpn[3063]: /sbin/route add -net 78.129.153.40 netmask 255.255.255.255 gw 192.168.1.1
+Dec  1 15:06:26 PIVPN airvpn[3063]: /sbin/route add -net 0.0.0.0 netmask 128.0.0.0 gw 10.4.34.153
+Dec  1 15:06:26 PIVPN airvpn[3063]: /sbin/route add -net 128.0.0.0 netmask 128.0.0.0 gw 10.4.34.153
+Dec  1 15:06:26 PIVPN airvpn[3063]: /sbin/route add -net 10.4.0.1 netmask 255.255.255.255 gw 10.4.34.153
+Dec  1 15:06:26 PIVPN airvpn[3063]: Initialization Sequence Completed
