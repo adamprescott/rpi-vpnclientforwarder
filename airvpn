@@ -1,0 +1,20 @@
+# OpenVPN AirVPN Start Script
+PIDFILE=/var/run/airvpn.pid
+DAEMON=/usr/sbin/openvpn
+
+case "$1" in
+  start)
+    echo "Starting AirVPN"
+    start-stop-daemon --start --oknodo --quiet --exec /usr/sbin/openvpn -- --writepid $PIDFILE --status /var/run/airvpn.client.status 10 --cd /var/opt/AirVPN --config /var/opt/AirVPN/AirVPN.ovpn --daemon airvpnadam
+    ;;
+  stop)
+    echo "Stopping AirVPN"
+    start-stop-daemon --stop --oknodo --pidfile $PIDFILE
+    ;;
+  *)
+    echo "Usage: /etc/init.d/airvpn (start|stop)"
+    exit 1
+    ;;
+esac
+
+exit 0
