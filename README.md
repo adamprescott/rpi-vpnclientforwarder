@@ -15,13 +15,20 @@ This setup was used with Raspbian, the image provided with the [NOOBS](http://ww
 10. If the previous step was successful, run **update-rc.d airvpn defaults** this ensures the VPN connects and starts up at boot. If the previous step didn't work look in **/var/log/syslog**, there should OpenVPN messages in there listed as the **airvpn** daemon. You can see my sample connection log under [examplesyslog](examplesyslog)
 
 ## Routing Traffic though the RPi
-Now you'll probably want to route certain traffic or all traffic via your RPi, there are two levels you can do this at and different ways to do it. Now as a test we should try to access the AirVPN Speedtest page available at http://10.4.0.1/ but to do this we either need to update the routing table on you computer or we can do it a router level so every device on the network can access it. Lets do it on the computer to start. First get the local network IP of your RPi in this example we'll use 192.168.1.7
+Now you'll probably want to route certain traffic or all traffic via your RPi, there are two levels you can do this at and different ways to do it. Now as a test we should try to access the AirVPN Speedtest page available at http://10.4.0.1/ but to do this we either need to update the routing table on your computer or we can do it at router level, so every device on the network can access it. Lets do it on the computer to start. First get the local network IP of your RPi in this example we'll use 192.168.1.7
 
 If you're using Windows you do the following:
 
 1. Open a Command Prompt as Administrator.
-2. Type **route add 10.0.0.0 mask 255.0.0.0 192.168.1.7**
-3. TODO
+2. Type **route add 10.0.0.0 mask 255.0.0.0 192.168.1.7** then press enter
+3. Now open your browser and visit [http://10.4.0.1/](http://10.4.0.1/) and run the speedtest, just seeing this page confims that routing is setup correctly.
+4. Repeat step 2 for any websites which you can't access on your ISP except for single addresses, it'll be **route add 192.30.252.129 mask 255.255.255.254 192.168.1.7**
+
+The 10.4.0.1 address is also the DNS Server which AirVPN make available, so once the above route is setup, feel free to change your network adaptor's DNS server to this IP.
+
+If you want to go a step further and ensure that every device on your network gets routed via the VPN when a blocked website is encountered, check to see if your router supports static routing. Every routers interface will be different but here's what mine looks like with a few entries configured.
+
+![Router](http://i.imgur.com/fUISLgb.png)
 
 ## Notes
 In addition to the above setup I also decided to make the filesystem read-only to reduce the chance of corruption in the case of power-loss. It also means I can just unplug the RPi without worrying about a fsck running on startup. You can find a guide here on this topic on the [RaspberryPi Forums](http://www.raspberrypi.org/phpBB3/viewtopic.php?p=213440). Whenever I want to edit a file on the filesystem I just run **sudo mount -o remount,rw /**
